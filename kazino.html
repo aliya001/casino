@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Kazino</title>
+    <style>
+        h2{
+         position: fixed;
+        top: 50px;
+            right: 50px;
+            color: white;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        h1{
+            margin: 0;
+            color: white;
+        }
+        .bg{
+            background:url('kazino.jpg');
+            background-repeat: no-repeat;
+            background-position: bottom ;
+            background-size: cover ;
+            height: 100vh;
+            text-align: center ;
+        }
+    </style>
+</head>
+<body class="bg">
+ <center><h1> kazino</h1>
+<img src="okno1.png" height="100" width="100" id="i1">
+<img src="okno1.png" height="100" width="100"  id="i2" >
+<img src="okno1.png" height="100" width="100"  id="i3">
+     <img src="knopka.png" height="100" width="100"  onclick="more()">
+     <h2 id="cash"> ваш баланс 100 </h2>
+ </center>
+</body>
+<script>
+    let i1 = 0
+     let i2 = 0
+     let i3 = 0
+              let cash=100
+    function more() {
+        i1=Math.floor(Math.random() *3) + 1;
+         i2=Math.floor(Math.random() *3) + 1;
+          i3=Math.floor(Math.random() *3) + 1;
+          if(i1===1){
+              document.getElementById('i1').src='spike.png'
+          }
+           if(i1===2){
+              document.getElementById('i1').src='TARA.jpg'
+
+            }
+             if(i1===3) {
+                 document.getElementById('i1').src = 'leon.jpg'
+             }
+    if(i2===1){
+              document.getElementById('i2').src='spike.png'
+          }
+           if(i2===2){
+              document.getElementById('i2').src='TARA.jpg'
+
+            }
+             if(i2===3) {
+                 document.getElementById('i2').src = 'leon.jpg'
+             }
+    if(i3===1){
+              document.getElementById('i3').src='spike.png'
+          }
+           if(i3===2){
+              document.getElementById('i3').src='TARA.jpg'
+
+            }
+             if(i3===3) {
+                 document.getElementById('i3').src = 'leon.jpg'
+             }
+             if (i1===i2&&i2===i3) {
+               cash+=1000
+             }
+             else if (i1===i2||i2===i3||i1===i3){
+               cash+=100
+             }
+             else {
+               cash-=100
+             }
+             document.getElementById('cash').innerHTML=' ваш баланс '+cash
+
+    }
+    
+</script>
+</html>
